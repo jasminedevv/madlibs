@@ -9,11 +9,14 @@ import re
 # mostly just using tuples for clarity
 
 my_story = [
-"Once upon a time, ",
-("proper noun","the Princess"),
-("past tense verb", "ate"),
-("noun", "a dragon"),
-". The end."
+("exclamation", "Yikes"),
+"! he said",
+("adverb", "whistfully"),
+"as he jumped into his convertible",
+("noun", "catbus"),
+"and drove off with his",
+("adjective", "beautiful"),
+"wife"
 ]
 
 def convert_story_to_text(raw_story):
@@ -24,7 +27,7 @@ def convert_story_to_text(raw_story):
             text = " " + text + item[1] + " "
         else:
             # item is just a string
-            text = text + item
+            text = " " + text + " " + item + " "
     # I borrowed this regular expression from stack overflow https://stackoverflow.com/questions/15950672/join-split-words-and-punctuation-with-punctuation-in-the-right-place
     text = re.sub(r' (?=\W)', '', text)
     return text
@@ -41,7 +44,7 @@ def run_story(raw_story):
         if type(item) is tuple:
             # if item is changeable
             the_new_term = get_new_word(item[0])
-            raw_story[index] = the_new_term
+            raw_story[index] = (item[0], the_new_term)
         index += 1
     return raw_story
 
