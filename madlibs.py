@@ -6,7 +6,7 @@ import re
 
 # what does text look like?
 # for now it looks like a list of strings and tuples where the tuple is ("type", "example")
-# mostly just using tuples for clarity
+# mostly just using tuples for clarity (could use lists or dicts probably)
 
 my_story = [
 ("exclamation", "Yikes"),
@@ -16,7 +16,7 @@ my_story = [
 ("noun", "catbus"),
 "and drove off with his",
 ("adjective", "beautiful"),
-"wife"
+"wife."
 ]
 
 def convert_story_to_text(raw_story):
