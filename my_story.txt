@@ -1,0 +1,10 @@
+[
+("exclamation", "Yikes"),
+"! he said",
+("adverb", "whistfully"),
+"as he jumped into his convertible",
+("noun", "catbus"),
+"and drove off with his",
+("adjective", "beautiful"),
+"wife."
+]

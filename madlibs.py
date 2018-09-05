@@ -19,17 +19,18 @@ my_story = [
 "wife."
 ]
 
+# converts a story in the above format to a story format
 def convert_story_to_text(raw_story):
     text = ""
     for item in raw_story:
         if type(item) is tuple:
             # item is changeable
-            text = " " + text + item[1] + " "
+            text = text + " " + item[1]
         else:
             # item is just a string
-            text = " " + text + " " + item + " "
+            text = text + " " + item
     # I borrowed this regular expression from stack overflow https://stackoverflow.com/questions/15950672/join-split-words-and-punctuation-with-punctuation-in-the-right-place
-    text = re.sub(r' (?=\W)', '', text)
+    # text = re.sub(r' (?=\W)', '', text)
     return text
 
 def get_new_word(type):
@@ -52,8 +53,8 @@ def test():
     # new_word = get_new_word("noun")
     # print(new_word) # I should look like ('type', 'word')
     # print(my_story)
-    story = run_story(my_story)
-    print(convert_story_to_text(story))
-    # print(convert_story_to_text(my_story))
+    # story = run_story(my_story)
+    # print(convert_story_to_text(story))
+    print(convert_story_to_text(my_story))
 
 test()
